@@ -1,0 +1,203 @@
+Station	SDH
+Site	Sandhill Continuous
+Operator	HVO
+Installation Date	1999-05-03
+Power Source	Local
+Battery Change Date	2023-03-02
+Battery Type	Group 27-105 Amp
+Battery Count	08
+Charge Controller	Sunsaver MPPT
+Charge Controller Count	02
+Solar Panel	100 Watt
+Solar Panel Count	02
+Telemetry Antenna	2.4GHz omnidirectional 12dBi
+Inst Box To Tiltmeter Cable Length	050 feet
+Inst Box To Telemetry Ant Cable Length	020 feet
+Inst Box To Telemetry Ant Cable Type	LMR 400 N-Type to N-Type
+Inst Box To Batt Box Cable Length	015 feet
+Solar Panel To Batt Box Cable Length	020 feet
+Depth In Feet	18.416
+Azimuth	0
+Station Number	104
+Telemetry Path1	Station -> HVO
+Zeno Config File	zenoConfigFile-9.txt
+Active	yes
+Notes
+Sand amount and distribution: Current tiltmeter (sn#6977) is resting on about 4" of sand. In total, about 200lb's of sand was placed in the casing, which makes the total height of the sand about twice that of the tiltmeter height.
+
+
+Current Inventory | History
+digitizer
+model	serialNumber	installationDate	uninstallationDate
+Coastal Environmental Zeno-3200	xxxxx	2015-11-17	
+ 
+powerRelay
+model	serialNumber	installationDate	uninstallationDate
+WEBRelay X-WR-4R1-I	00:0C:C8:02:49:D9	2011-06-30	
+192.168.18.34
+ 
+radioWiFi
+model	serialNumber	installationDate	uninstallationDate
+Trango 2.4GHz/5GHz	Radio WiFi 0136	2015-09-15	
+192.168.18.18
+ 
+tiltmeter
+model	serialNumber	installationDate	uninstallationDate
+AG Lily	6977	2020-01-21
+
+
+49 Tilt Logs Matches				
+Station	Entry Date	Location	Technician Old Format	Technician	Tasks
+SDH	2023-03-02 12:49:04	Field		Logan Fusso,Miki Warren,Seth Swaney	Change Battery
+Changed all 8 batteries.
+SDH	2020-01-21 13:26:38	Field		Amberlee Darold,Kalani Calles,Steven Fuke	
+reason for visit: install new tiltmeter (sn#6977), install rubber coupling along with 10"pvc sewer pipe to increase height of casing, so it is above ground level.
+
+result: installed a sacrificial LED light (taken from vacuum cleaner attachment, which CJ purchased from Home Depot) on the "North side" of tiltmeter handle; also installed an LED flash light towards the bottom of Frank's tiltmeter alignment jig. Kalani noted that with the LED light shining upwards and the LED flash light shining downward, he was able to see the tiltmeter and align the "North" portion of tiltmeter pointing north. Partially filled depression of casing area with material at surface area (rubber coupling and part of pvc casing is buried).
+
+SDH	2019-09-19 16:11:18	Field		Kalani Calles,Steven Fuke	
+Reason for visit: Recon/ vacuum remainder of tiltmeter borehole.
+
+Result: Desiccant's that were placed in the borehole during the last visit were removed. Desiccant's had barely any water accumulated in them. Vacuumed roughly 30 lbs. of sand from borehole. Estimate about 20 lbs of wet sand left in the borehole. It appears there is still a small
+puddle of water at the bottom of the borehole and some of the sand is compacted along the side of the bore hole (will require a return trip to complete sand removal). Placed desiccant back in borehole and placed rubber lid back on.
+SDH	2019-08-27 15:44:29	Field		Kalani Calles,Steven Fuke	
+Reason for visit: Needed to reassess the tiltmeter bore hole and secure desiccant within the bore hole.
+
+Result: Water level in bore hole had risen roughly 1 inch since last visit. Secured desiccant to para-cord and lowered into bore hole. Covered/sealed bore hole with rubber cap and steel clamp.
+SDH	2019-08-21 10:37:09	Field		CJ Moniz,Kalani Calles,Steven Fuke	
+reason for visit: vacuum out water and water logged sand, extract tiltmeter (which will be replaced).
+
+result: used a two vacuum system design to extract water and sand (a small pelican enclosure was used to integrate two - 2.5" vacuum cleaner hoses into one 2.5" hose that will go down into the tiltmeter hole for water and sand extraction [by integrating the two vaccum sources into one hose, the negative pressures become additive, one vacuum source take care of 1/2 of the volume of the hose, while the other vacuum source takes care of the other half of the volume of the hose, which equates to more suction power. tiltmeter was removed from hole.
+
+note: CJ and Kalani are speculating that water may be entering the case from below the surface based on their visual observation (water and majority of sand was removed from casing with vacuum system, though water seemed to reappear). No tiltmeter or sand was re-installed; we put bucket and metal cover back on and will observe what happens on our next visit.
+for future sand/tiltmeter removal we should bring lots of water and portable pressure washer to clean pelican and vacuum hoses.
+Frank younger assisted in the fabrication of the vacuum system.
+
+SDH	2019-08-07 08:47:09	Field		Kalani Calles,Steven Fuke	Rebooot Computer/Radio
+Reason for visit: Attempt to re-establish radio telemetry link between SDH and SMC. Also needed to assess/get measurements of tilt meter bore hole.
+
+Result: Temp installed EB-1 and attempted link with SMC. The foliage surrounding SMC is too dense to establish an RF link.
+
+Acquired measurements to fabricate a new cap and extension pipe to level the top of the bore hole with the surrounding area to prevent future flooding.
+SDH	2019-07-25 12:00:00	Field		Kalani Calles,Peter Dotray,Steven Fuke	
+reason for visit: install the two remaining temperature sensors for the two battery banks that exist in the large black pelican; no charge controllers exist in the large black pelican. Also, re-wire the terminal blocks in the tan pelican so all outputs of the load control, separated by a diode each, are connected in parallel.
+
+result: inserted the two temperature sensor wires into the 3/4" conduit that also contains the blue and black 10awg pairs for the two battery banks in the large black pelican, then placed the temperature sensor end between the batteries. we added a jumper wire from the bridged cathode diode pairs of two battery banks to the bridged cathode pairs of the remaining two battery banks, so all load control outputs after the cathode side of the diodes are in parallel
+SDH	2019-07-23 13:37:04	Field		Frank Younger,Kalani Calles,Steven Fuke	
+reason for visit: finish upgrade.
+
+result: removed 3-80 watt solar system and replaced it with a 4-100 watt solar system (1-2 panel setup mounted on each pole); integrated gas hi-resolution station into the power bank, number of batteries was increased from 6 to 8; 4 mppt charge controllers were installed; hollow tile enclosure was removed and replaced by a large black pelican (0500 case - smart switch [in small orange colored pelican enclosure] and tilt-meter electronics box, along with 4-12 volt batteries are housed in this case ); removed both solar modules and action packer containing 12 volt batteries from gas high resolution; covered both unused holes in the ground with hollow tile block to prevent someone from falling into the hole
+SDH	2019-07-18 12:00:00	Field		Frank Younger	
+reason for visit: conduct 900 MHz radio test from SDH tilt to SMC tilt.
+
+result: re-aligned 900 MHz yagi antenna situated on tripod to 65degrees with Intuicom eb6+ radio in point to point mode. Radio did not link.
+
+Steven Fuke @ SMC.
+SDH	2019-06-10 08:43:33	Office		Ingrid Johanson	Rebooot Computer/Radio
+SDH Lily tiltmeter was unresponsive. Pulsed web relay and the tiltmeter came back online, however the output was strange. Returned to relay and turned power off for ~1 minute, then back on. That didn't change things.
+
+Issued *9900XY-MEMS command to erase flash memory. Which fixed the strange output.
+
+Tiltmeter behaving normally for now.
+SDH	2019-05-14 11:23:27	Office		Sarah Moore	Rebooot Computer/Radio
+Same issue as yesterday. Rebooted, changed date (as it went back to 2000), wiped data and replaced the config file to get more data coming in. Looks like its working on and off Icinga list.
+SDH	2019-05-13 13:20:01	Office		Sarah Moore	Rebooot Computer/Radio
+I first cycled power on SDH on Friday, May 10th. The data was coming in fine (just slow) but at some point over the weekend the date changed to Jan 1, 2000. I changed the data on the lily but then the data was coming in at April 00, 2019. I wiped the memory using first *9900XYC-OFF then *9900XY-MEMS to erase memory and then finally *9900XYC2 to start logging again. The date was good after this and is now logging the current date and in valve. Also, before it was in valve we had to change sample rate in the config for SDH from 100 to 15 and then restart importPoll, change it back to 100 and restart again.
+SDH	2019-01-07 16:20:15	Office		Ingrid Johanson	Rebooot Computer/Radio
+Strange sampling interval on tiltmeter ~18-22 seconds. Cleared memory and restarted sampling.
+SDH	2018-03-27 17:00:37	Field		CJ Moniz,Kevan Kamibayashi	
+This afternoon we had enough of a weather window to investigate the weird signal that occurred during a torrential downpour earlier today- shortly after 15:00. At first glance everything looked fine. We removed the large aluminum borehole cap and saw mud all around the casing, then we removed the plastic inner cap and could see water about 2/3rds the way up the casing.
+
+The SDH borehole was flooded from this afternoons rain event. The instrument continues to run, but currently the northern component is pegged. This instrument is capable of re-leveling its self, but we still have the issue of a flooded borehole.
+SDH	2016-12-08 12:30:29	Field		CJ Moniz,Steven Fuke	
+Station suffered an outage for unknown reason. Upon investigation one of the battery banks had a battery explode. Not known if this caused the Trango and the EB6+ to fry it's self. We changed the two batteries in the bank, charge controller, Ethernet cable for Trango, Trango, and the EB6+ that services summer camp.
+SDH	2016-01-28 11:35:07	Office		Ingrid Johanson	
+Re-leveled tiltmeter. North component appeared to have a pretty significant trend to it, that was not volcano related. The Lily manual implied that re-leveling might improve long term stability.
+SDH	2015-11-17 10:03:10	Field		CJ Moniz	
+Changed out Zeno... forgot to grab SN.
+SDH	2015-10-22 16:22:23	Field		Kevan Kamibayashi,Steven Fuke	
+Today we replaced the tiltmeter. We removed Lily 9172 and installed a new Lily 8739. The base of the tiltmeter was installed at 18 feet 5 inches. The instrument was buried by about 3 feet of sand. The tiltmeter is orientated north, dead on by my eye. The station is now up and running.
+
+The older instrument stopped responding after a lightning storm. At this time we still need to inspect that instrument in the lab to determine if its just a cable problem or if the instrument is fried.
+
+The current zeno seems to be losing it's head. It requires frequent reboots to work. It is only used for collecting box temperature and voltage, both of which can be gathered from other instruments at the same site. We'll still try to swap it out in the near future.
+SDH	2015-10-15 10:58:36	Field		CJ Moniz	
+As a troubling shooting step to bring back summer camp I moved the 900MHz antenna to a temporary tripod pole. It seems to have improved the signal and SMC is currently coming in. I also repointed SMC antenna to correct azimuth and rebooted radio.
+SDH	2015-09-15 14:09:51	Field		CJ Moniz,Kevan Kamibayashi,Steven Fuke	
+We completed the station upgrades and removed it from the Vivato.
+SDH	2015-09-11 14:20:15	Field		Kevan Kamibayashi	
+Everything looks fine at this station. I couldn't find any physical signs of lightning strike damage.
+
+I was not able to communicate with the lily while being directly plugged in. Another hint that the issue is directly related to the instrument is that the zeno poling is continuing to work.
+
+I'm afraid that we may need to replace the instrument. Before going that route I do want to dismantle the tiltmeter connector and inspect that for any signs of damage.
+SDH	2015-09-08 11:43:13	Office		Ingrid Johanson	
+Cycled power on Lily and Zeno in attempt to get Lily back online, but was unsuccessful.
+SDH	2015-08-11 15:19:03	Office		Ingrid Johanson	
+Reset times on Zeno and Lily after power interruption.
+SDH	2015-08-11 11:45:00	Field		Steven Fuke	Change Charge Controller(s),Change Solar Panel
+reason for visit: 1st phase of power upgrade.
+
+results: removed one 80 watt solar module and replaced it with a three 80 watt solar module system, installed three morningstar charge controller (load control is being used for each charge controller), used the existing three batteries to power system (current setup is one to one; will be two batteries per charge controller for a total of 6 batteries).
+
+note: seismic volunteer Matt helped with the installation.
+SDH	2015-08-06 09:40:03	Office		Ingrid Johanson	
+Work on the seismic station at Sandhill affected power to the tiltmeter, which resulted in a 3-3.5 microrad step in the North component.
+SDH	2014-08-13 12:00:00	Field		Steven Fuke	
+reason for visit: station data not coming in; can't communicate with radio at SMC.
+
+solution: the day before, CJ and I rebooted the radio at SMC which yield no successful result. Today I programmed another Eb6+ and replaced the one at SDH; communication to SMC was successful with the signal strength between -86dBm and -89dBm. verified with Kevan that station was coming in
+SDH	2014-08-12 13:56:25	Office		Loren Antolik	
+Station seemed to have lost power during tropical storm Iselle. Timestamps were reset to factory default. Manually connected to tiltmeter and datalogger and reset timestamps. Data is coming back in now.
+SDH	2012-02-22 12:44:19	Field		Bill Million,CJ Moniz	
+radio was unreachable and no data from gas/tilt and seismic. Visited site and hard power cycled radio. Checked data flow to HOV.
+SDH	2011-11-29 15:15:21	Office		Loren Antolik	
+Data stopped coming in at 8:05 AM for all stations (Seismic/Gas/Tilt). Signal strength at -98db. Rebooted master radio at station that serves all these instruments and data is coming back in again. Signal strength at -69db.
+SDH	2011-06-30 16:57:54	Field	Maurice Sako, Steven Fuke	Bruce Furukawa,CJ Moniz,Kevan Kamibayashi	
+Today we removed the old tilt meter and all of it's components, including power system. Then we installed the new Lily tiltmeter SN:9172, and new electronics box containing the intuicom eb6+ and the web relay quad (both of which their settings can be found above).
+
+The intuicom radio that's inside of the tilt electronics box serves as the master radio for SMC, and servers as the device server for the Lily and Zeno. The webrelay and the intuicom both have their own cat5e cables running from the tiltmeter electronics box to the battery box (big tile box) where the wifi radio is being housed.
+
+The wifi radio that is at this site is the new Avila platform, running DD-WRT. It's inside of a pelican 1400 case to provide enough room to house all 5 RJ45 connectors. Connected to this wifi radio is the SDH tiltmeter (which brings back SMC too), the sandhill seismometer DST, and the sandhill gas station.
+
+The wifi radio antenna is a 12dbi bumb, pointed to 10.5 degrees. The Intuicom radio antenna is a 7 element Yagi, pointed to SMC at 66 degrees.
+
+Everything is up and running.
+SDH	2008-04-22 12:00:00	Field	Maurice Sako, Kevan Kamibayashi		
+We pulled out tiltmeter with a 25' cable that sat at a depth of 16' and vacuumed all the sand out. The bottom of the casing is at 19'. We put about 1/4" of sand on the bottom and installed AG722 tiltmeter SN: 5215 with a 50' length cable. Two bags of sand was poured down the casing to stabilize the tiltmeter. The tiltmeter was set with the filter on and at high gain. The N-S component (Y) = -0.350v and the E-W component (X) =0.085v.
+SDH	2008-04-03 12:00:00	Field	Maurice Sako, Owen		
+We went to fill in more sand to hopefully help stabilize the tiltmeter. The sand was 13 ft 5 1/2 in from the top of the casing with the top of the tiltmeter showing before we poured more sand. The sand is now at 11 ft from the top of the casing and the tiltmeter is buried by about 2 1/2 ft of sand.
+SDH	2008-03-27 12:00:00	Field	Kevan Kamibayashi		
+Today we successfully cleaned the hole to the true cement bottom, at 19ft. The hole is dry and clean. However, our 25ft tiltmeter cable will only reach down to 16ft. So we filled sand 3ft up the hole. The tiltmeter's bottom is resting at 16ft. After leveling, the tiltmeter is: filter on, high scale, Y-.789, X-.073. Voltage was measured at 14.2V with out anything connected. The Y on the tiltmeter is pointed 5-8  to the west (avg. 6.5 , so pointed to 353.5 ). Sand is almost covering the tiltmeter, only the bar on the top is exposed. Station is up and running. There is currently no rain gauge at this site. Installing one at this time might be useless because of ash fall.
+SDH	2008-03-25 12:00:00	Field	Kevan Kamibayashi and Maurice Sako		
+Today we removed the tilt meter. Found that what we thought was the bottom of the hole, at 15' 10", was actually a false bottom that was hard probably due to water and silica sand mix. We were able to break through this surface to find more wet sand and pockets of water. As of today there are some ledges, down hole in the pipe, that we still need to break to continue cleaning before we reach the true bottom of the hole.
+SDH	2008-03-24 12:00:00	Field	Kevan Kamibayashi		
+Today we removed the electronics box. It's running in the office now as the test station. SDH in currently down.
+SDH	2006-09-13 12:00:00	Field	Kevan Kamibayashi		
+Station was down due to battery and bad solar power system. A new stainless steel antenna mast (2 1/2 inch) was installed to replace the corroded galvanized one. A new 50 watt solar pannel as well as a new fiberglass omni was installed on the new SS mast. One new 27 wet battery and a new sunsaver 10 charge controller was installed in the same culvert as the electronics box. The station has no raingauge. Lastly the goes radio was disconnected and removed. Station is up and running.
+SDH	2006-07-19 12:00:00	Field	Kevan Kamibayashi		
+Stations solar panel's frame and mount are rotten from corrosion. Need to replace solar panel and antenna mast with stainless steel. I installed a new 27 battery. The solar panel that's out there should last until we can replace it and a mast. The solar panel is being held in place with some wire.
+SDH	2006-03-06 12:00:00	Field	Kevan Kamibayashi		
+Site had a low voltage alarm. Pulled out two 27 wet cell batteries. Installed 1 new gel cell battery. The charge controller at the site was turning on and off with old and new batteries, so I replaced the APC charge controller with a new Morningstar SunSaver 10 charge controller. Station is up and running.
+SDH	2006-02-07 12:00:00	Field	Kevan Kamibayashi		
+Reset the tiltmeter. Readings before was Y=-5.96 X=2.72 in High gain. Tiltmeter was re leveled and now Y=0.034 X=0.043 in Low gain. Station was left in High gain, filter on. Bottom of hole =15'10 to top of casing, top of cassing to ground surface is 3'. We covered the tiltmeter with sand, top of sand is 12'4. We also covered the casing with a plastic bucket followed by an al drum. The casing used to be filled with water because the old cover had rusted away.
+SDH	2005-07-07 12:00:00	Office	Kevan Kamibayashi		
+The casing at this site was filled with water. I vacuumed out the water. The tilt meter is sitting in wet sand. North component seems to go off scale on the down sides of the diurnal, a problem that started in August of 2004. In August of 2004 there was a big rain as viewed by KWL rain gage. This probably the result of water getting into the casing.
+SDH	2002-10-28 12:00:00	Field	Fran Coloma		
+Site visit: Zeno #1227, Freewave 900-7708, GOES radio 420327, gain=HIGH, filter=ON.
+SDH	2001-11-30 12:00:00	Field	Ralf		
+1200 HST. Checked raingauge since in the middle :of the heavy rainfall no more rain data was :collected. Raingauge was tilted to one side :because it was only hanging at one plastic strip, :all the others were broken. :Fixed it temporarily. :Rain data was collected during tests.
+SDH	2000-12-18 12:00:00	Office	Kevan Kamibayashi		
+Today I switched out the rain meter at sand hill. It looked like one of the connector pins was broken and the raingage its self wasn't looking to healthy. The replacement gage is one of the full green plastic ones (RainWise), so hopefully there will be less corrosion.
+SDH	2000-05-18 12:00:00	Field	Mike L., Fran C., David W., and Ian S.		
+Azimuth of y-axis 337 degrees clockwise from north. Station location is 19 23' 25.36042 , -155 17' 37.48131 1135.4 m. GPS measured azimuth to DTL1 is 340 16' 17.3, distance 21.6346 m. Used fixed position for UWEV to get location, total station for angle betwen DLT1 and y-axis tiltmeter.
+SDH	2000-04-06 12:00:00	Field	Dave W.		
+Replaced cable from Zeno to Goes box. De-soldered connection to fuse and clipped in new power cable
+SDH	2000-03-23 12:00:00	Field	David W.		
+2200 UTC. Removed GOES transmitter from station to troubleshoot.
+SDH	2000-03-23 12:00:00	Office	Mike L.		
+Swapped original Zeno back into case. Checked GOES transmitt power with Bird Meter - no transmissions occurred. Back in the office we discoved that the WIN.INI file had a bad time entry for the last radio download of SDH. Downloads began normally once date was corrected.
+SDH	2000-03-21 12:00:00	Field	Dave W.		
+Removed Zeno from box, replaced exact same Zeno back into box by mistake. Installed memory-upgraded Zeno back into radio box. :Zeno id#'s not recorded (either 1227 or 1225). :
+SDH	1999-05-03 12:00:00	Field	Mike L.		
+0100 UTC. Replaced 16-bit Sutron DCP with Zeno3200, added rain gage. : :Garbage can covering pipe rusted away. I put duct tape over top of case and a plastic bucket over that. : :Old tiltmeter eletronics were not removed, but hidden down in platform tiltmeter pit. : :

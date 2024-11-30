@@ -1,0 +1,242 @@
+Station	UWE
+Site	Uwekahuna Vault ET
+Operator	HVO
+Installation Date	1999-04-01
+Power Source	AC Power with UPS
+Battery Change Date	2024-04-18
+Battery Type	Group 27-105 Amp
+Battery Count	01
+Charge Controller	SunSaver 10L
+Charge Controller Count	01
+Solar Panel	---N/A---
+Telemetry Antenna	900MHz Omni 06dB
+Inst Box To Tiltmeter Cable Length	040 feet
+Inst Box To Telemetry Ant Cable Length	020 feet
+Inst Box To Telemetry Ant Cable Type	LMR 240 N-Type to N-Type
+Inst Box To Batt Box Cable Length	000 feet
+Solar Panel To Batt Box Cable Length	100 feet
+Rain Gauge	Texas Electronics Inc.
+Depth In Feet	17.166666667
+Azimuth	327
+Station Number	101
+Telemetry Path1	Station -> HVO
+Zeno Config File	zenoConfigFile-3.txt
+Active	yes
+Notes
+Notes about power system from post made 2016-11-17
+New system includes: Battery minder AGM 2 amp AC charger connected to a G31 AGM deep cycle battery (all located inside UWE vault), connected to a power cable that runs out of the UWE vault and to the tilt station. The power line then connects to a 50W step up/down voltage regulator to account for voltage drop over the long dc power line. The output of the VR goes to a terminal block where the loads are connected.
+
+3 loads: Analog Tilt meter (UWE), Digital Tilt meter (UWD) which is powered through another VR providing 9 volts, and the Moxa serial device server.
+
+I also installed static lightning protection on the cat5e line that runs from the device server for UWD into the network switch within the UWE vault.
+
+8/8/2023 - we replaced radio with Xetawave radio and installed a webrelay for the purpose of power cycling the Zeno when it gets hung.
+
+
+Current Inventory | History
+digitizer
+model	serialNumber	installationDate	uninstallationDate
+Coastal Environmental Zeno-3200	1235	2017-01-24	
+ 
+powerRelay
+model	serialNumber	installationDate	uninstallationDate
+WebRelay X-WR-4R3-1	00:0C:C8:05:5A:63	2023-08-08	
+ip = 192.168.10.38; Ry1 = Zeno, Ry2 = Xetawave radio, Ry3 = none, Ry4 = Webrelay itself
+ 
+radio
+model	serialNumber	installationDate	uninstallationDate
+xeta9-el	X000000011903	2023-08-08	
+UWE_Tilt IP: 192.168.10.35, Mask: 255.255.255.0, Gateway: 192.168.10.1; Point to Multipoint, EP, End point transmit rate = 884kbps BPSK 1200kHz, hop pattern=1Net ID: 200; Dev ID: 42; Link w/:3; Net Rad: 40km; EP; Serial - 4001: tilt, 4002: Zeno
+ 
+tiltmeter
+model	serialNumber	installationDate	uninstallationDate
+AG 722	1654	2002-06-27
+
+
+
+60 Tilt Logs Matches				
+Station	Entry Date	Location	Technician Old Format	Technician	Tasks
+UWE	2024-07-10 10:39:52	Field		Steven Fuke	Other
+Installed a more substantial casing cover for the UWE/UWD tiltmeter site using a 15” sewer pipe w/cap. The previous setup utilized a rusted out galvanized steel trash can with no bottom and a plastic trash can. I removed and recycled the rusted out galvanized trash can and installed the substantial sewer pipe w/tight fitting cap. I noticed the plastic trash can fits over the sewer pipe installation, so l installed it with the thought process of better insulation as the sun’s energy initially beats on the plastic trash can as opposed to the sewer pipe thereby lessening hot air convection in the tiltmeter casing.
+UWE	2024-07-02 15:49:21	Field		Kevan Kamibayashi,Miki Warren,Seth Swaney,Steven Fuke	Other
+Releveled analog tilt. Ending values were: low gain-filter off: y=.001 x=-.083; high gain-filter off: y=.00 +2 to -2 x=-.80; high gain-filter on: y=.185 x=-.679. We need to come back and replace the top of the borehole - the black trash bin that is there now will not last much longer.
+UWE	2024-04-18 16:44:09	Field		Seth Swaney,Steven Fuke	
+Reason for visit: Continued troubleshooting as to why the tiltmeter data is not coming in.
+
+Result: continued the troubleshooting which led to a resolve of the issue.
+We initially verified that the conditions were the same as before, 3.3 volts at the output of the DC-to-DC converter. The next several steps involved removing all the loads from the system, replacing the input power source to the DC-to-DC converter with a fully charged 12-volt battery, measuring the output voltage with no load, and lastly connecting each load one by one into the system and verifying no loading effect exists. At this point of the troubleshooting process, the Xetawave transceiver was unable to establish a connection to the complementary collection radio at the HVO tower. In addition, we could not establish a connection to the GUI (Graphic User Interface) using a web browser and the transceiver’s assigned IP address. We replaced the transceiver with one that was programmed by Miki and the wireless connection to the collection radio was establish. Once it was verified that the system was functional with all the loads connected, we removed the 12-volt battery connection from the DC-to-DC converter and proceeded to troubleshoot the input power source located in the vault. Inside the vault, the power source consisted of a 12-volt AGM battery, an AGM battery charger connected to an AC (Alternating Current) power source, and a two pair cable serving as the interface between the output of the AGM source and the input to the DC-to-DC converter of the UWE tiltmeter station. The charger indicated that one cell of the AGM battery was faulty (battery couldn’t supply the dc current necessary when the loads were connected). We replaced the AGM setup with what we had in stock, a standard lead acid battery setup. A 3-amp rated AC to DC converter, a PWM charge controller and a lead acid battery with the proper wire connections constituted the replacement power system within the vault. The UWE tiltmeter system devices were confirmed to be operational, locally, and remotely. Remote confirmation was done through verbal exchanges with Kevan; the actual tiltmeter data would have to be confirmed by one of the geophysicists in the Geodesy group.
+UWE	2024-04-16 16:40:31	Field		Kevan Kamibayashi,Miki Warren,Steven Fuke	
+Reason for visit: UWE tiltmeter data not coming in.
+
+Result: Unable to resolve the issue, we'll have to make a return trip for further diagnosis.
+The office diagnosis was pointing to the ethernet section of the Xetawave transceiver, as the collection radio at the HVO tower showed RSSI (Receive Signal Strength Indicator) values in both directions of communications as mid -40dbms. The WebRelay (used to power cycle or turn on/off connected devices) mates its ethernet connection to one of the two ethernet ports on the Xetawave transceiver. Both, WebRelay and Xetawave transceiver were inaccessible via the office setting. As a result, Miki had programmed another Xetawave transceiver as a possible replacement and I acquired stock of an unprogrammed WebRelay should that device need replacement also. Upon arrival and opening the enclosure for the UWE analog tiltmeter electronics, we observed no LED (Light Emitting Diode) indicators were lite for devices that have them installed, so we suspected a power supply issue. We proceeded with the troubleshooting by measuring the input voltage to the input terminal busbar; the measured voltage was about 3.3 volts, far less than what it should be, in the 12volt range. We opened up the adjacent enclosure to which the analog tiltmeter electronics was receiving its power from and measured the voltage across both the input and output terminals of the DC-to-DC converter; the output voltage was measuring 3.3 volts, while the input was measuring 11.98 volts. The input voltage seemed okay, though the output voltage should have been near the 12-volt range which is the rating of the DC-to DC converter; this low voltage output led us to believe the converter is faulty and needs replacement. Unfortunately, we did not have a replacement with us, so we called Kevan to update him on the status of the troubleshooting. He had stock of one and brought it to us in addition to providing aid. The converter was replaced, though the low output voltage remained. The thought of something loading down the voltage was a possibility, so we started to disconnect the loads. One by one we disconnected the loads and the low voltage condition remained, until we disconnected the modular DC-to-DC converter card (exclusive to the UWE tiltmeter providing a plus and minus supply voltage reference to ground). We targeted the modular card and found a replacement one at Milo warehouse; Kevan volunteered to drive back to the station and install it, though the low voltage condition remained after the replacement card was installed. No further troubleshooting could be conducted that day as it started to rain with greater intensity.
+UWE	2023-08-08 14:54:40	Field		Mike Cappos,Miki Warren,Steven Fuke	
+Reason for visit: Zeno unreachable. To perform upgrade by replacing existing radio with Xetawave radio and install a web relay so we can reboot Zeno when unit is hung.
+
+Result: Performed upgrade with Xetawave radio and WebRelay installed. RS-232 cable (dB9 connector on one end and RJ45 connector on the other end) is connected to port#1 (configured to be port#4001) of Xetawave radio and the other end of the cable is connected to com3 of Zeno. WebRelay assignments are as follows: Relay 1 = Zeno, Relay 2 = Xetawave radio, Relay 3 = none, Relay 4 = WebRelay itself. Fuse assignment are the same as before, where Zeno, Radio and DC-DC converter/regulator are fused independently. Output of dc-dc converter as measured on the Applied Geomechanical filter electronics board was +13.4 and -13.40 with each reference to common. Xetawave radio ip = 192.168.10.35 and the WebRelay ip = 192.168.10.38.
+UWE	2023-08-02 08:08:57	Field		Kevan Kamibayashi,Miki Warren	Other
+Reason for visit: Zeno unreachable
+
+Result: we reset the Zeno in the field and it is now reachable
+UWE	2019-03-06 14:31:36	Field		Kevan Kamibayashi	
+Station was out from the evening of the 4th because of a failed serial device server at the HVO radio room. That repair was made and this stations data is now caught up. This station is up and running. For further details see the maintenance log for the HVO radio room.
+UWE	2018-08-30 08:49:57	Field		Frank Younger,Kevan Kamibayashi	
+Today we releveled the UWE tiltmeter. Because of lightning damage to the UWD instrument, which is installed above the UWE instrument, we needed to expose and disrupt the borehole anyway.
+
+Initially the instrument was at 14V on the East component and 5.8V on the North. We did not remove the instrument so it's installation depth remains unchanged. After releveling the instrument was at 0.00V on the North (Y) and -.4V on the East (X). Because we were installing the UWD instrument above it during the same service we expected it to move quite a bit as it settles.
+
+NOTE: The borehole has tilted quite a lot over the past few months in response to Kilauea Caldera collapses. The instrument needed to be moved so much so that we could see down the Eastern face of the instrument after releveling.
+UWE	2017-05-25 14:28:32	Field		Frank Younger,Kevan Kamibayashi	
+Found a second loose power connection. The power issues we were experiencing with this site on May 3rd was due to loose connections on the voltage regulator. Today's power issue was related to a loose connection within UWE electronics enclosure- where power feeds into the terminal block prior to distribution of the fuse panel.
+
+I hope this is the last issue we'll see.
+UWE	2017-05-03 14:32:33	Field		Kevan Kamibayashi	
+Found that our power issues was related to loose screws on the voltage regulator. The screws that were loose was the positive lead output and the calibration resistor connection. This issue also affected UWD. Station is now up and running.
+UWE	2017-05-01 11:29:42	Field		Frank Younger,Kevan Kamibayashi	
+Today we checked the power system because we have been receiving low voltage alarms. We were unable to identify any issues with the power system The zeno is seeing 12.4 V. The voltage regulator is a step up/ step down regulator, meaning that it will provide 12.4V regardless of the voltage input.
+
+At this time it's not clear why were receiving low voltage alarms. The last one received was from 10:37am saying its at 11.224, but we measured 12.4.
+
+There is no issues with the power system. Something is messed up with the zeno or the way we are interpreting each text line from the zeno.
+UWE	2017-01-26 15:14:13	Field		Frank Younger,Kevan Kamibayashi	
+Since we continued to have noise on the east component we decided to examine the condition of the connector. We found that the signal ground line was broken and the -12 power source line was barely hanging on (may have also been broken but just making contact). I soldered on a new connector and got everything resealed.
+
+It's been a little over two hours since we performed this fix. So far I don't see any odd signals on any of the channels.
+
+Station is up and running.
+UWE	2017-01-24 15:42:55	Field		Frank Younger,Kevan Kamibayashi	
+There is a noise that is on the East component of the tilt signal. This started after a zeno failed and Ingrid replaced it on 1/22/2017. Yesterday on the 23 we replaced the zeno thinking this noise was the zeno's fault, but the noise continued. Today we replaced the zeno twice and still the signal show noise on the east component.
+
+I'm pretty confident that the issue is not the zeno, having got through 3 different zenos all still showing the same noise on the east channel.
+
+Today the weather prevented further diagnostics. We'll revisit tomorrow.
+UWE	2016-11-17 15:28:06	Field		Kevan Kamibayashi	
+I completely redid the power system that feeds this station.
+Old: Trimble ac power adapter (supplying 18 volts at 3 amps), connected to a power cable that runs out of the UWE vault and to the tilt station. The power line then ran into a solar charge controller which charged a M27 battery (which was holding at 13.8 volts, but an hour later read only 11.6- very suspect). The loads were connected to the battery.
+
+New: Battery minder AGM 2 amp AC charger connected to a G31 AGM deep cycle battery (all located inside UWE vault), connected to a power cable that runs out of the UWE vault and to the tilt station. The power line then connects to a 50W step up/down voltage regulator to account for voltage drop over the long dc power line. The output of the VR goes to a terminal block where the loads are connected.
+
+3 loads: Analog Tilt meter (UWE), Digital Tilt meter (UWD) which is powered through another VR providing 9 volts, and the Moxa serial device server.
+
+I also installed static lightning protection on the cat5e line that runs from the device server for UWD into the network switch within the UWE vault.
+
+Station is up and running- only time will tell if the spikes return to the tilt signal.
+UWE	2016-11-14 17:39:12	Field		Ingrid Johanson	
+Turned off power to tiltmeter for ~15 mins (at 1pm HST) in order to mitigate spikes that are returning to the data stream.
+UWE	2016-10-19 13:21:18	Field		Ingrid Johanson	
+Replaced Zeno as part of troubleshooting for high frequency noise in tiltmeter.
+UWE	2016-10-17 16:23:43	Field		Ingrid Johanson,Kevan Kamibayashi	
+Tiltmeter was power cycled in an attempt to troubleshoot data spikes that began 10/15/16. Zeno also had its power cycled. Results point to instrument problem, but zeno should be replaced first.
+UWE	2015-07-24 14:54:11	Field		Ingrid Johanson	
+Work on UWD involved removing power from other items in the tilt box. The zeno then needed a new time and a step was introduced in the UWE time series.
+UWE	2014-04-24 13:57:30	Field		Asta Miklius	Rebooot Computer/Radio
+Data gap after battery change yesterday. Zeno needed a power cycle, then could change the wacky time.
+UWE	2012-08-28 10:16:19	Field		Loren Antolik	
+Data stopped coming in around 2:00 AM. Was able to connect to the radio, but was unable to bring up the zeno menu. Walked over to station and inspected power supply line(s) to zeno. Found fuse became unseated from housing. Fuse appeared to be in good shape. Re-seated fuse in housing. Returned to HVO and was able to connect to the zeno. Had to reset zeno system time, and deleted all data records. Data is coming in again as of 10:15 AM.
+UWE	2012-07-13 11:26:12	Field		Kevan Kamibayashi	
+The power supply, that charged the batter, at UWE has failed for the second time. I looked at it and it's because the power supplies fan failed, so the power supply would overheat and shut it's self down.
+
+Anyway I replaced it with a power supply that doesn't use a fan. I didn't replace the battery. I think the battery will recover just fine, but it'll take some time so we'll probably continue to see the low voltage alarms for a few days. I'd like to keep that alarm active during this time.
+
+Anyway it's all up and running.
+UWE	2012-03-12 14:19:20	Office		Kevan Kamibayashi	
+Data stopped coming in at about 2am this morning.
+
+While on the zeno there was no files logged. The time was messed up, zeno taught it was 1969/12/31.
+
+I reset the time and restarted the download. Looks like it's back up.
+UWE	2011-01-13 12:00:00	Office	Kevan Kamibayashi		
+Called the zeno because data stopped coming in at 2011-01-14 01:02 UTC. I was able to connect, and I reset the time. The time looked ok, so I don't think it had anything to do with it.
+
+Probably just needed someone to talk story with. It's running now, and data is all caught up.
+UWE	2010-07-27 12:00:00	Field	Kevan Kamibayashi & Maurice Sako		
+Today we visited the site because on the night of 2010-07-25, the voltage had done that odd drop to 10.8. Today it was still thinking that the voltage was 10.8. However, upon our visit the very first thing we did was check the battery voltage... which read 13.5. I opened the tilt electronics enclosure and read the power directly off of the zeno... it too said 13.5. Everything checked out. After checking everything I figured we may aswell cycle the power on the tilt enclosure.
+
+When we got back to the office I noticed that new data wasn't showing. So I called this station and saw that the time was wrong, by a few months. But the most recent data point, despite the bad time, showed a voltage signal of 13.45. I reset the time and restarted the download.
+Currently the voltage reads correct at 13.5.
+
+The station is up and running.
+UWE	2010-07-20 12:00:00	Field	Asta Miklius		
+Kevan reset all zeno times today; UWE (and several other sites) went down within the next few hours. UWE required a power cycle on the zeno and also another time setting
+UWE	2010-06-29 12:00:00	Field	Kevan Kamibayashi		
+Sometime last night we started to see a very weird voltage signal. I'm not sure what caused this, but when I visited the site I simply checked and tightened the already tight connections. The battery voltage was at 13.8 with the charge controller in place, and 13.5 without the charge controller connected. The charge controller was actively feeding in .5 amps into the battery, which is typical because that's the average draw of the load. I'm not sure what happened.
+
+We did notice that the UWD lilly didn't show a wild tilt signal even thou it did see the odd power signal as-well. To help eliminate the strong influence the voltage has on the analog tilt signal I installed a ground isolated dc/dc regulator for the tiltmeter. The zeno data logger utilizes a common ground for all signal inputs as well as the power, and because our instrument feeds out a differential output it too uses the common ground of it's power source. By isolating the ground from the instrument relative to the data logger, I hope to eliminate this issue.
+
+The station is up and running. The ground isolating dc/dc regulator is made by Arch Electronics Corp. Model No: SU20-12-12S. It is placed on a circuit board with a trim adjuster by Power Stream.
+UWE	2009-10-13 12:00:00	Field	Kevan Kamibayashi		
+The data stopped coming in around 14:15 today. When I tried to connect to it remotely I couldn't reach the zeno. So upon visiting, the zeno would not respond to the laptop. So I cycled power on the zeno and it came back up. The time was good but there was no data for what ever reason. I assume that the zeno had gotten stuck somehow and a cycling of the power woke it back up. I should also mention that earlier today I reset all zeno times on all stations including this one. But since that time update this station had been coming in just fine. Maybe just a coincidence. The station is up and running.
+UWE	2009-04-20 12:00:00	Field	Kevan Kamibayashi		
+Today I upgraded the power supply. There is a 15 amp 13.8 volt dc power supply inside the Vault. This power supply is wired to the station by a 175 foot 12 awg outdoor power cable that is rated for both UV and burial. This 175 foot power cable is buried. In the tilt enclosure the power cable is hooked up to a SS-10 charge controller, and the charge controller is hooked up to the Gel 105 amp battery with some 2ft power cables.
+
+In addition I added a voltage regulator to the tiltmeter. This regulator is currently only on the tiltmeter and nothing else. If we continue to see a noisy signal I may try adding the zeno to the voltage regulator. The Voltage regulator is a 3 amp switching regulator set to 12 volts via the worm-gear screw on the top of the potentiometer.
+
+I also removed the filters, and replace the dc/dc converter board with a standard one.
+
+The station did temporarily loose track of time, but after resetting the zeno clock the station is up and running.
+UWE	2009-02-20 12:00:00	Field	Asta Miklius & Loren Antolik		
+switched to 30 sec data rate; tried various combinations of sample loops. Noise persists. Also tried turning filter off on tilt board -also no diff in noise amplitude (only for about 10min, data deleted because of offsets from working at site). Last config (put in at about 2pm HST) sampled x and y tilt at 10samples/2s for 30s, all other channels 1/15s. Ran for hours, then the zeno hung up at about 18:30 HST and user menu unreachable. Logged onto Zeno Feb 21 on site at about 10am, unable to reach user menu without a power cycle. Found that no data was stored in memory. Set sample counts on x+y channels to 8 samples on 2s sample loop. left others as they were. Current config is stored on getac laptop, in my desktop. SAMPLE RATE CHANGED BACK TO 1 MIN 2009-07-31
+UWE	2008-10-14 12:00:00	Office	Asta Miklius		
+11:30 HST. Changed config to collect at 20 sec sample rate. Set sensors 3+4 (x+ytilt) sample count to 4, on 1sec timing loop (were 8 samps and 2sec). Changed sensors 5+6 (hole temp and agnd) sample count to 4, but left on 2 sec timing loop.
+
+Tried a different config on the previous Friday, 10/10, that bogged down the datalogger and required a power cycle on the zeno
+UWE	2008-08-29 12:00:00	Field	Loren Antolik & Kevan Kamibayashi		
+The east component of the signal was coming in weird. It could have been affected by the work done yesterday at the station. We replaced the op-amp for the east component, and all 3 fuses. Came back to the office to analyze the signal.
+UWE	2008-03-06 12:00:00	Field	Kevan Kamibayashi		
+We could not reach the zeno from the office. Station stopped coming in at around 5:30pm yesterday. On site the zeno needed to be power cycled in order to access the user menu. When I tried to look at the last data point to see if the time was good, the zeno said that the memory was empty. So I reset the time and in doing so saw that the zeno had jumped to 2019. The station is now up and running.
+UWE	2004-08-05 12:00:00	Office	Asta Miklius		
+2004-Aug-05(?). changed sample rate back to 1 min; decimated database of previous 10sec data to 1 min (10sec data saved in db as uwetilt10s)
+UWE	2004-08-01 12:00:00	Office	Kevan		
+2004- July, Aug?. Added active filter to both channels of tilt meter. The filter is placed on new dc/dc converter board.
+UWE	2003-12-01 12:00:00	Office	Peter		
+22:12 UTC. sampling rate from 60 to 10 sec
+UWE	2003-09-14 12:00:00	Office	Peter		
+changed freewave to 901-7614 (old one went to SLC)
+UWE	2003-08-29 12:00:00	Office	Peter		
+Removed Zeno #1487 to be placed at SLC. Put in Zeno #1043 at site.
+UWE	2002-07-08 12:00:00	Field	Kevan Kamibayashi, Maurice Sako		
+We removed both the ag and pinacle tiltmeters, which were in for experimental reasons. We then installed the ag tiltmeter at 17 feet 2 inches. We ended up filling sand to 13 feet 4 inches. We also placed Uwe vault's original zeno into the new analog box. The freewave is 904-2629. The tiltmeter is set at low-gain/ filter on and Y=0.037 & X=0.036.
+UWE	2002-06-27 12:00:00	Field	Kevan & Sako		
+We placed another tiltmeter in the hole. As of now there is an analog tiltmeter just on top of the pinnacle tiltmeter. The analog's system is totally isolated from that of the pinnacle. The analog is set at low gain/ filter on- Y-0.122 & X-0.355. The High gain readings are Y- neg1.451 & X-3.657.
+UWE	2002-05-23 12:00:00	Office	Fran Coloma		
+0940 HST. Trying to determine 1-min coefficients. Saved EEPROM before going through menus, so no data from 0940 - 1050.
+UWE	2002-05-14 12:00:00	Field	Cervelli and Sako		
+Removed Applied Geomechanics S/N 3441. :Added Pinnacle Technologies S/N 5961. : :We believed that the AG tiltmeter was behaving errratically, but this may have actually been an electrical system problem. : :This station was then run on an experimental telemetry system for the next 5 days.
+UWE	2002-05-14 12:00:00	Office	Maurice, Annie, Peter,Ralf		
+Because of anomalous spikes in the signal, the Applied Geomechanic tiltmeter Sn3441 was pulled out. The instrument box and tiltmeter was checked out at HVO and a chip on the DC-DC convertor board was found to be bad. More tests are being run to see if this was truly the problem and not the tiltmeter itself. : :A Pinnacle tiltmeter SN5961P was installed as a replacement
+UWE	2002-04-30 12:00:00	Field	Maurice Sako, Kevan Kamibayashi		
+Changed the antenna and the Zeno to FreeWave cables. Also installed a new Omni antenna.
+UWE	2002-04-29 12:00:00	Field	Fran & Ralf		
+1630. Replaced short FW whip antenna with longer antenna. Data coming in. Note: remove second short whip antenna (furthest from rain bucket) in better weather - not connected to electronics.
+UWE	2001-06-06 12:00:00	Office	Fran Coloma		
+1836 UTC. UWE GOES plot of internal website stuck. Re-initialized GOES (was 22 seconds ahead - clock: 18:36:58 and GOES: 18:37:19). Plot returned okay.
+UWE	2001-06-04 12:00:00	Office	Asta Miklius		
+2001/06/04. Changed TiltAlarm UWE threshold from 0.5 µrad/5 min to 0.4 µrad/5 min. This was done in response to the 0130 event this morning - event was just under prior threshold value. :
+UWE	2000-11-14 12:00:00	Field	Fran Coloma		
+~16:00 HST. Polling data stuck (GOES data okay) - cycled power on UWE site freewave.
+UWE	2000-11-13 12:00:00	Office	Fran Coloma		
+~11:30 HST. Changed update maintenance alarm from 60 min to 120 min
+UWE	2000-05-17 12:00:00	Field	Mike L., Kevan K., D. Whitling, I. Schipper		
+01:00 UTC. Pulled PinnTech tiltmeter out of casing, vacuumed sand to expose top of Applied Geomechanics Tiltmeter. Measured angle from BMX to y-axis AGI tiltmeter = 83°, azimuth to BMX from tiltmeter (previously measured with GPS) is 244° (clockwise from north) making the azimuth of y-axis 327°. Could not view top of tiltmeter with optical plummet of leveled total station. We aligned cross hair with instrument off level, then leveled up to get direction readings.
+UWE	2000-05-17 12:00:00	Office	Mike L.		
+Computed position of tiltmeter relative to UWEV permanent GPS station: 19° 25' 14.81915" -155° 17' 27.41595" 1257.15 m. Reference position of UWEV used in reduction from 00apr29.fixed.stacov 19° 25' 15.137810" -155° 17' 28.055836" 1257.675 m. Used GPSurvey for data reduction.
+UWE	2000-04-27 12:00:00	Field	Mike L., Fran C.		
+Y-axis PinnTech tiltmeter 315° from North. Y-axis 71° clockwise of direction from tiltmeter to UWEV Dry Tilt BMX, as measured with total station. Azimuth to BMX from tiltmeter 244°, as measured with GPS.
+UWE	2000-04-13 12:00:00	Field	Mike L. Fran C.		
+20:00 UTC. Installed trickle battery charger in vault and connected power wire to tiltmeter battery box. Removed old batteries and wooden platform. Connected trickle charger to one battery and connected tiltmeter electronics box power cable directly to battery. Switched tiltmeter gain switch to high gain. Replaced temporary GOES to Zeno cable. GOES transmitter initilized.
+UWE	2000-04-12 12:00:00	Field	Maurice Sako		
+battery seemed overcharged; disconnected battery charger and checked voltage to box; ok. replaced ZENO to GOES radio wire and replaced blown 5a fuse.
+UWE	2000-01-28 12:00:00	Field	Mike L.		
+18:45 UTC. Changed Zeno from Serial #1208 To Serial #1487. Blue signal wire from tiltmeter broke after removing from socket. Solar panel was stolen.
+UWE	2000-01-21 12:00:00	Office	Mike L.		
+00:00 UTC. Changed maximum sensor count from 16 to 0 for sensors 1, 2, and 3. Checking if this will reduce noise in data.
+UWE	2000-01-18 12:00:00	Field	Mike L.		
+00:20 UTC. Replaced Zeno to GOES cable and GOES initialized.
+UWE	2000-01-17 12:00:00	Field	Mike L.		
+22:30 UTC. Replaced batteries. Unable to initialize GOES.
+UWE	1999-11-04 12:00:00	Field	Mike Lisowski		
+9:20 HST. Measured orientation of Pinntech tiltmeter. Yellow dot on bar orientated at azimuth 330°.
+UWE	1999-10-28 12:00:00	Field	Mike Lisowski		
+15:00 HST. Added 4.5 W solar panel to charge battery powering Pinnacle Technology 5909 tiltmeter. Set it on ground.
+UWE	1999-10-26 12:00:00	Field	Mike		
+~13:30. dropped Pinnacle tiltmeter on top of :existing one in borehole; caused offset	

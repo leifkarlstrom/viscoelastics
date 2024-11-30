@@ -1,0 +1,130 @@
+Station	IKI
+Site	Kilauea Iki
+Operator	HVO
+Installation Date	1999-06-23
+Power Source	Local
+Battery Change Date	2024-02-07
+Battery Type	Group 27-105 Amp
+Battery Count	02
+Charge Controller	MorningStar SunSaver 15L
+Charge Controller Count	01
+Solar Panel	100 Watt
+Solar Panel Count	01
+Telemetry Antenna	900MHz Omni 03dB
+Inst Box To Tiltmeter Cable Length	020 feet
+Inst Box To Telemetry Ant Cable Length	010 feet
+Inst Box To Telemetry Ant Cable Type	LMR 400 N-Type to N-Type
+Inst Box To Batt Box Cable Length	005 feet
+Solar Panel To Batt Box Cable Length	010 feet
+Rain Gauge	RainWise
+Azimuth	356
+Station Number	105
+Telemetry Path1	Station -> ELE_RPTR
+Telemetry Path2	ELE_RPTR -> HVO
+Zeno Config File	zenoConfigFile-7.txt
+Active	yes
+
+
+Current Inventory | History
+digitizer
+model	serialNumber	installationDate	uninstallationDate
+Coastal Environmental Zeno-3200	1208	2000-03-21	
+ 
+powerRelay
+model	serialNumber	installationDate	uninstallationDate
+WebRelay X-WR-4R3-1	00:0C:C8:05:5A:CB	2023-10-12	
+IP: 192.168.21.126; Relay 1: Zeno, Relay 2: Xetawave, Relay 3: open, Relay 4: webrelay
+ 
+radio
+model	serialNumber	installationDate	uninstallationDate
+xeta9-el	X00000001190E	2024-01-18	
+IKI_EP; IP: 192.168.21.123 Mask: 255.255.255.0 Gateway: 192.168.21.1; Net ID: 300; Dev ID: 23; Link w/: 25; Net Rad: 50km; Serial: port 1 (4001)-tilt, port 2 (4002)-Zeno
+ 
+tiltmeter
+model	serialNumber	installationDate	uninstallationDate
+AG 722	3659	1999-06-23	
+
+
+40 Tilt Logs Matches	Ordered By: entryDate DESC (Clear)			
+Station	Entry Date	Location	Technician Old Format	Technician	Tasks
+IKI	2024-02-07 14:46:14	Field		Miki Warren,Seth Swaney,Steven Fuke	Change Battery,Change Charge Controller(s),Change Solar Panel
+Came back to IKI less than a month after changing batteries because they were losing power at a very fast rate. We switched the 80 watt solar panel to a 100 watt solar panel, replaced the charge controller with an MPPT 15L, and replaced both batteries. The are is surrounded by Ohi'a trees and the panel does not get much sunlight. We may need to consider moving the station or the solar panel(s).
+IKI	2024-01-18 14:25:10	Field		Miki Warren,Seth Swaney,Steven Fuke	Change Battery,Equipment Swap
+Went to the site yesterday to find out why we could no longer connect to the radio and Zeno. The batteries weren't holding a full charge, and we couldn't connect directly to the radio at the site, so we brought the radio back to Milo. We brought a newly programmed Xeta9 radio and two new batteries today and swapped them all out. Verified that we could connect to the radio and the Zeno and that the batteries were holding their charge. Andi was able to connect to IKI remotely. Station is now up and running.
+IKI	2024-01-18 11:28:17	Office		Miki Warren,Steven Fuke	
+In the electronic's lab, Miki and I powered-up the previous Xetawave transceiver (sn# X000000011904) to find that the radio had reverted to its factory settings, so the default IP address of 192.168.0.3 was used in the URL field of a web browser to access the radio's gui (graphic user interface). It's unknown as to what caused the radio to reset to default settings. We would need to test functionality with a complimentary radio.
+IKI	2023-10-12 13:06:39	Field		Miki Warren	
+Upgraded the old Freewave radio to a new Xetawave and added a webrelay.
+IKI	2023-03-01 15:07:13	Field		Logan Fusso,Miki Warren,Seth Swaney	Change Battery
+Changed 2 batteries at IKI.
+IKI	2021-04-22 16:33:43	Field		Kevan Kamibayashi	
+Visited the site to reboot the zeno. I notice that the vegetation around the site is starting to get tall enough to reach the solar panels. We'll need to perform some grounds maintenance in the next several months.
+IKI	2020-12-04 09:22:27	Field		Frank Younger,Sarah Moore	Rebooot Computer/Radio
+IKI need a reboot. Frank Younger went to the station to give the zeno a reboot (red, +) cable. I was able to see WatchDog Reset from the log, and able to connect right away to the zeno. The date had changed to 2010 so I updated the time and the data is coming back in.
+IKI	2020-05-14 14:25:58	Office		Frank Younger,Sarah Moore	
+IKI need a reboot. Frank Younger went to the station to give the zeno a reboot (red, +) cable. I was able to see WatchDog Reset from the log, and able to connect right away to the zeno. The date had changed to 12/31/1969 so I updated the time and the data is coming back in.
+IKI	2020-04-22 16:02:16	Office		Sarah Moore	
+IKI needed a restart. Frank Younger went to site to give the zeno a reboot. The UWE ID is back, again. I uploaded a config file (one from database) and fixed the issue again. Data is coming back in.
+IKI	2019-11-25 08:34:26	Office		Sarah Moore	
+The UWE ID is back. I uploaded a config file (one from database) and fixed the issue again. Data is coming back in.
+IKI	2019-06-06 15:13:53	Field		Sarah Moore	
+First, I rebooted zeno by taking out power cable from the zeno. I was able to connect to the zeno on site after replacing the serial cable. Ingrid was able to access from the office and noticed the config file had UWE ID. Remotely, I uploaded a config file. I also updated the time and deleted the data (because of the bad time).
+IKI	2018-07-26 15:27:47	Field		Asta Miklius	Rebooot Computer/Radio
+Changed ZENO with Brian Meyers, serial number not updated above.
+IKI	2017-09-05 16:36:30	Field		Sarah Moore	Rebooot Computer/Radio
+Cycled power on Zeno. Up and running as of 9-5-17.
+IKI	2017-07-24 13:42:15	Office		Asta Miklius	
+Has been out since 7/15; radio is reachable but no return from zeno
+IKI	2017-07-06 09:20:56	Field		Kevan Kamibayashi	
+Zeno needed to be reset. Site does not have a relay, to put one in a telemetry upgrade would be required. Zeno's time was reset and data deleted because old zeno time was 10 min in future.
+Station is up and running.
+IKI	2017-02-21 15:35:11	Field		CJ Moniz	
+Station not coming in due to malfunctioning LMR400 cable. Replaced radio with Freewave 901-7613. Also changed antenna and LMR400.
+IKI	2017-02-16 11:09:00	Field		CJ Moniz,Frank Younger	
+replaced solar panel.
+IKI	2017-02-15 14:30:52	Field		CJ Moniz	Change Battery
+Scheduled Battery Change
+IKI	2017-01-18 14:07:54	Field		CJ Moniz,Frank Younger	
+Site check done, found rain bucket off pole (slipped out of clamp). Fixed.
+IKI	2015-08-03 11:44:26	Field		CJ Moniz	
+Antenna tilted again. Needs proper clamp and to relocate rain bucket.
+IKI	2015-01-05 14:30:16	Field		CJ Moniz	
+Responded to an unreachable Zeno, found omni tilted to approx 45deg angle. Straightened antenna and strapped with 2 large zip ties, problem fixed
+IKI	2012-09-12 07:50:28	Field		Bill Million	
+Full site rebuild, removed all equipment to be serviced, installed two new batteries w/new wiring, charge controller and updated with new TB setup, new Omni ant w/cable, upgrade solar panel to 50 watt panel, placed green jug w/2" 90 for tilt cable, cleaned and painted housing boxes and mounted to pole, reconnected ground, radio tested O.K., cleaned and reinstalled rain bucket,
+IKI	2009-01-06 12:00:00	Field	Kevan Kamibayashi & Maurice Sako		
+Today we changed the battery at this station.
+IKI	2007-11-06 12:00:00	Field	Kevan Kamibayashi & Loren Antolik		
+Visited site to visually inspect for any problems. Data has intermittently not been coming in. Site visually looks fine. A site rebuild is coming up for this site, and perhaps this will fix this intermittent issue.
+IKI	2001-05-10 12:00:00	Office	Fran Coloma		
+~16:50 HST. Changed ZENO transmit time from 08:50 to 08:58. Also reinitialized GOES clock (was current).
+IKI	2001-05-09 12:00:00	Office	Asta Miklius		
+changed transmission time to 9:20 (zeno trans :time 8:50) to avoid blocking by heih, which has :drifted into iki's time slot. :
+IKI	2001-01-04 12:00:00	Office	Kevan & Chan		
+The solar panels were remounted to the correct position.
+IKI	2001-01-03 12:00:00	Office	Asta Miklius, Fran Coloma		
+~15:00 HST. GOES transmission down since ~12/29. reinitialized GOES - didn't help.
+IKI	2000-12-06 12:00:00	Office	Asta Miklius, Fran Coloma		
+~04:30 pm HST. Initialized GOES - checked website (~30 min delay), data online.
+IKI	2000-12-06 12:00:00	Office	Kevan Kamibayashi		
+Today I did a antena cable change, and a wire(zeno to goes) swap. :The Goes antena had a few loose pins, so they were fixed as well. :There is still the construction of a green house going on near the tiltmeter :set up. One of the two solar panels, is still not attatched to a panel mount. :The work that was done did not fix the goes connection, so there is still work :to be done at iki. By process of elemination, we need to replace the antena or we :need to replace the goes radio unit, or maybe both to fix the problem.
+IKI	2000-10-26 12:00:00	Office	Fran Coloma		
+13:40 HST. Changed TiltAlarm threshold down from 10.0 mrad/5 min to 1.0 mrad/5 min. Checked site - large CAT equipment that triggered alarm is gone.
+IKI	2000-10-26 12:00:00	Office	Fran Coloma		
+~14:40 HST. TiltAlarm event - alarm company responded. IKI station east -1.006 mrad exceeded 1.0 mrad threshold, likely due to construction work. Changed threshold to 1.5 mrad/5 min.
+IKI	2000-10-23 12:00:00	Office	Fran Coloma		
+~11:00 HST. TiltAlarm triggered - 0.742 mrad/5 min exceeded threshold of 0.7 mrad/5 min. HVO was contacted by All Island Security Company - they reached Dave Sherrod off of the telephone call-down list. Stopped TiltAlarm. Checked site, alarm was caused by heavy equipment (Caterpillar) being used to grade road. Contacted Park, construction with CAT for today only. Changed threshold rate from 0.7 mrad/5 min to 10.0 mrad/5 min until construction is over. Future threshold rate still under evaluation, likely to be 1.0 mrad/5 min.
+IKI	2000-10-13 12:00:00	Office	Ralf & Fran		
+Adjusted threshold settings from 0.4 mrad/5 min to a rate of 0.7 mrad/5 min to compensate for potential vehicles parked near site.
+IKI	2000-10-13 12:00:00	Office	Ralf & Fran		
+All Island Security wired TiltAlarm switch box to main HVO alarm system. TiltAlarm now armed similar to tremor alarm with same telephone call-down list.
+IKI	2000-05-19 12:00:00	Field	Fran C., David W., Ian S.		
+Tiltmeter located 19 25' 8.16390, -155 14' 45.1817, 1181.5 m, y-axis azimuth 329 degrees clockwise from north. Angle from y-axis to nail in cement around pig pen 93.62 degrees, azimuth to nail 235.22 degrees clockwise of north.
+IKI	2000-05-01 12:00:00	Field	Mike L.		
+23:00. Station has two 20-Watt solar panals, mounted separately. I removed one solar panel mount and placed the panel on top of instrument box. Panel mount to be used on Honoalua. Replace two panel with single 46-Watt panel when it arrives. :
+IKI	2000-03-21 12:00:00	Field	Mike L.		
+2040 UTC. Replaced Zeno3200 #1115 with memory upgraded #1208. Noted serial number for GOES radio (426571). Initialized GOES from HVO.
+IKI	1999-11-16 12:00:00	Field	Michael Lisowski		
+9:20 HST to 10:52 HST. Removed two top tiltmeters from hole, extra electronics box, antenna, and batteries. Checked orientation of very bottom tiltmeter. Vacuumed sand until top of bottom tiltmeter showed, found y-axis point 356 degrees from north. The tiltmeter appears to be touching the south side of the casing. Added several feet up sand before leaving. Noted that tiltmeter gain and filter wires must be switched - changing the filter to off puts the tiltmeter in low gain.
+IKI	1999-11-16 12:00:00	Field	Michael Lisowski		
+Correction to previous entry - y-axis aligned 346 degrees clockwise from North.

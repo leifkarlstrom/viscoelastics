@@ -1,0 +1,226 @@
+Station	SMC
+Site	Summer Camp
+Operator	HVO
+Installation Date	2002-04-11
+Power Source	Local
+Battery Change Date	2023-03-08
+Battery Type	Group 27-105 Amp
+Battery Count	02
+Charge Controller	MorningStar SunSaver 15L
+Charge Controller Count	2
+Solar Panel	080 Watt
+Solar Panel Count	2
+Telemetry Antenna	900MHz 09dB
+Inst Box To Tiltmeter Cable Length	050 feet
+Inst Box To Telemetry Ant Cable Length	012 feet
+Inst Box To Telemetry Ant Cable Type	LMR 400 N-Type to N-Type
+Inst Box To Batt Box Cable Length	008 feet
+Solar Panel To Batt Box Cable Length	012 feet
+Rain Gauge	RainWise
+Depth In Feet	8.5
+Azimuth	360
+Station Number	112
+Telemetry Path1	Station -> HVO
+Zeno Config File	zenoConfigFile-21.10oct07
+IPAddress
+IP address updated Sept 01, 2021: 63.42.151.52
+
+Radio 192.168.18.36
+Cell Modem: 166.149.83.25
+Access to all modems is done via port 9191
+Password for logging into cell modem should be: Da!2Kine007
+eb6+ login using web browser = 166.149.83.25:4005
+webrelay login using web browser = 166.149.83.25:4006
+zeno using terra-term = 166.149.83.25:4002 (type "u", then press enter)
+Active	yes
+Notes
+Site is currently on a cell modem.
+
+
+Current Inventory | History
+digitizer
+model	serialNumber	installationDate	uninstallationDate
+Coastal Environmental Zeno-3200	3493	2010-09-28	
+ 
+powerRelay
+model	serialNumber	installationDate	uninstallationDate
+WEBRelay X-WR-4R1-I	00:0C:C8:02:24:9A	2010-09-28	
+192.168.18.37 = previous ip
+
+166.149.83.25:4005 = current login using web browser
+ 
+radio
+model	serialNumber	installationDate	uninstallationDate
+900MHz Intuicom EB-6 plus FIP1-900N2B-HE	885-8597	2020-01-14	
+166.149.83.25:4006 = current login using web browser
+ 
+tiltmeter
+model	serialNumber	installationDate	uninstallationDate
+AG Lily	8743	2010-09-28	
+
+
+62 Tilt Logs Matches				
+Station	Entry Date	Location	Technician Old Format	Technician	Tasks
+SMC	2023-03-08 14:07:21	Field		Logan Fusso,Seth Swaney	Change Battery
+Changed 2 batteries. Tipped rain gauge, but nothing coming in to Valve. Rain gauge may need to be replaced.
+SMC	2021-10-01 13:05:36	Office		Ingrid Johanson	Rebooot Computer/Radio
+Tiltmeter wasn't coming in so I rebooted the intuicom via the web relay. Oddly the zeno was being retrieved ok. The radio reboot did the trick, data is coming in again.
+SMC	2021-09-29 13:03:54	Office		Andi Ellis,Ingrid Johanson	Rebooot Computer/Radio
+Data wasn't being retrieved and the tiltmeter would apply the correct timestamp to data points. We rebooted the tiltmeter and then cleared the memory and reset the time. Rebooting may not have been necessary, clearing the memory and resetting probably would have fixed it.
+SMC	2020-03-03 11:56:46	Office		Ingrid Johanson	Rebooot Computer/Radio
+SMC tiltmeter was not sending data; though zeno was ok. Rebooted Lily, cleared memory, and reset time.
+SMC	2020-01-14 13:30:03	Field		Kalani Calles,Steven Fuke	
+reason for visit: tilt data not coming in, rain gauge data is flatline. cell modem, eb6+, web relay and zeno accessible. remove old station infrastructure.
+
+result: switched zeno db9 from port 2 to port 1 of eb6+ to verify eb6+ port 1 operation. unsuccessful connection, so we rebooted the zeno via the web relay, still no connection. we swapped out the eb6+ and the zeno works on both ports. we connected the tiltmeter to port 1 and zeno to port 2 of eb6+. Then Kevan advised us to due a dump command for tiltmeter and we were able to see the information on the screen. We replaced the rain gauge with a new one; the old one was clogged.
+SMC	2019-11-25 08:32:25	Office		Sarah Moore	
+The station has needed several power relay pulses, however I checked the poll this morning and the year was 00. I changed then date and then stopped out putting data to erase the flash memory. After restarting data output I had to change the config file to max lines from 600 to 1 in order for the polling to pick up the data. Everything looks fine now and data is coming in with the correct date.
+SMC	2019-08-07 09:02:14	Field		Kalani Calles,Steven Fuke	Rebooot Computer/Radio
+Reason for visit: Attempt to re-establish radio telemetry link between SMC and SDH.
+
+Result: Temp installed EB-1 and attempted link with SDH. The foliage surrounding SMC is too dense to establish an RF link.
+SMC	2019-07-18 12:00:00	Field		Steven Fuke	
+reason for visit: conduct 900 MHz radio test from SDH tilt to SMC tilt.
+
+result: Intuicom eb6+ radio in point to point mode. Antenna azimuth @245 degrees. Tried both the existing antenna and new antenna, also panning, though radio did not link.
+
+Frank Younger @ SDH
+SMC	2019-07-03 11:09:11	Office		Sarah Moore	
+The data had the wrong time stamp even though the time on the lily was alright. I wiped the flash memory with *9900xy-mems and restarted the logging. The data has the correct time on it now.
+SMC	2019-01-07 16:14:48	Office		Ingrid Johanson	Rebooot Computer/Radio
+Wrong time being given to data samples, despite Lily displaying the correct time. Wiped memory and restarted sampling.
+SMC	2018-10-18 10:35:33	Office		Ingrid Johanson	Rebooot Computer/Radio
+Lily tiltmeter lost the data. I went in and changed it, and it displayed correctly with dump2, but the data download line still had the wrong date. I wiped the flash memory with *9900xy-mems and it seems to be ok for the moment.
+SMC	2018-10-17 16:06:22	Field		CJ Moniz,Steven Fuke	Change Battery
+Proactive maint battery change. Noticed there is no diode matrix to separate batteries/charging. need to build a new one at some point.
+SMC	2018-03-29 12:05:56	Office		Ingrid Johanson	
+Successfully changed times on tiltmeter and zeno
+SMC	2017-07-24 13:50:53	Field		Asta Miklius	
+It has been impossible to keep a connection to SMC long enough to set times for several months. IOW, time is unreliable!
+SMC	2017-01-18 14:09:50	Field		CJ Moniz,Frank Younger	
+Site visit done, rain bucket found hanging. Put on pole and secured.
+SMC	2016-08-05 17:07:01	Office		Ingrid Johanson	
+Another memory wipe to restore the correct timestamps on the data samples.
+SMC	2016-06-13 16:22:19	Office		Ingrid Johanson	Rebooot Computer/Radio
+Had to wipe memory again because of out of date timestamps. Not sure what to recommend.
+SMC	2016-04-26 11:20:26	Office		Ingrid Johanson	
+Timestamps were 10 minutes behind again. Wiped memory and restarted loggin & they're back.
+SMC	2016-03-11 16:00:51	Office		Ingrid Johanson	
+Timestamps were 10 minutes in the past despite having the correct time on the tiltmeter. Cleared off memory and now timestamps are correct.
+SMC	2015-10-15 11:02:25	Field		CJ Moniz	
+Copy from SDH:
+
+As a troubling shooting step to bring back summer camp I moved the 900MHz antenna to a temporary tripod pole. It seems to have improved the signal and SMC is currently coming in. I also repointed SMC antenna to correct azimuth and rebooted radio.
+SMC	2015-05-07 13:37:40	Office		Ingrid Johanson	
+New data was getting time stamps ~10 mins in the past, despite time on instrument being correct. Cleared off old data and restarted logging, now data has current time.
+SMC	2014-08-13 12:00:00	Field		Steven Fuke	
+reason for visit: station data not coming in; can't communicate with radio at SMC.
+
+solution: the day before, CJ and I rebooted the radio at SMC which yield no successful result. Today I programmed another Eb6+ and replaced the one at SDH; communication to SMC was successful with the signal strength between -86dBm and -89dBm. verified with Kevan that station was coming in.
+SMC	2013-05-07 14:25:52	Office		Asta Miklius	
+Set time on tiltmeter, which had lost time info on power outage.
+SMC	2013-05-07 10:06:59	Field		CJ Moniz,Steven Fuke	Change Battery,Change Charge Controller(s),Change Solar Panel
+We changed out single panel to a dual 80w panel setup due to lack of sunlight in the area.
+SMC	2013-01-22 14:18:38	Field		Bruce Furukawa,CJ Moniz	
+Changed batteries and cleaned out rain gauge.
+
+NOTE: Two Ohia trees, one on the West and one on East are causing limited sun to the solar panel. I estimate the panel only sees sun from 10am to 3pm. The trees are at least 30' tall each. Otherwise station health is good.
+SMC	2012-01-26 17:39:31	Office		Loren Antolik	
+Rain gauge at SMC appears to be clogged. Data is coming back as all 0s.
+SMC	2011-06-30 17:24:17	Field		CJ Moniz,Kevan Kamibayashi	
+Today we reprogrammed the IPs of this station to be on the Vivato system. The intuicom radio now shoots back to SDH tilt and it's then shot back to hvo via wifi over the vivato.
+
+In doing these changes we also redirected the yagi antenna to SDH at 246 degrees.
+
+Station is up and running.
+SMC	2010-10-26 12:00:00	Field	Kevan Kamibayashi		
+Today we completed the install, by adding the rainguage and programing the power relay to be on the correct subnet. The station is up and running.
+
+I also took photos, which will be loaded into the sites database.
+SMC	2010-09-28 12:00:00	Field	Kevan Kamibayashi & Maurice Sako		
+Today we performed ARRA upgrades to SMC. This included installing a new telemetry mast 10 ft tall. A new 80 Watt solar panel and mount, new 900 MHz antenna, two new 27-105 batteries, a new battery box, new charge controller morning star sunsaver 10 w/LVD, new electronics enclosure, new intuicom EB6+ 900 MHz radio, a IP power relay, and of-course a brand new Lily Tiltmeter.
+
+Because of the issues with communications through the forest, this station's antenna needs to be on Horizontal polarization. Currently it is being collected by a master which is located in the HVO observation tower. In the long run I intend to install the master at Sandhill tilt, to be used as a gateway for SMC as well as a device server for SDH. Then SDH will be shot back to HVO via wifi.
+SMC	2010-09-15 12:00:00	Office	Kevan Kamibayashi		
+Called this station, connection is very slow. I deleted data then restarted the process on Moi.
+SMC	2010-07-08 12:00:00	Office	Kevan Kamibayashi		
+Deleted the data from the zeno and reset the time. The time was only off by a few seconds.
+
+Data is coming in.
+SMC	2010-07-07 12:00:00	Office	Asta Miklius		
+switched smc back to hvo from redhill
+SMC	2010-06-24 12:00:00	Office	Kevan Kamibayashi & Asta Miklius		
+Station had stopped coming in. I called it and deleted data... time was only a few seconds off. Thing to note thou, I had difficulty calling smc through hvo so I tried calling it through redhill instead. Seemed as thou calling smc through redhill worked better and faster.
+
+So... as an experiment, we switched smc to redhill. Currently smc is being called through redhill and is commented out on hvo. Another thing to note, because redhill's modem calls hei through a repeater it has the tendency to try calling a direct through a repeater. To avoid problems caused by this, we are telling the redhill modem to call smc through repeater 0 (direct/ no repeater).
+
+Currently data is coming in on smc.
+SMC	2010-06-17 12:00:00	Field	Kevan Kamibayashi		
+Needed to visit site to power cycle the zeno. Station is up and running.
+SMC	2009-12-29 12:00:00	Field	Loren Antolik		
+Changed the batteries at the station due to impending failure of the current batteries. Batteries were dropping below 11.7 volts at night, and were on a slow decline since the beginning of November.
+
+Checked battery voltage with solar panel hooked up and read 12.01 Volts. Checked voltage of solar panel output, and was 19.23 Volts at 10:30 am with slightly overcast skies, indicating a good output. Swapped out the batteries and checked battery voltage with solar panel hooked up and read 13.17 Volts. Hooked power back up to electronics box and all systems came up okay. Asta verified data was coming back in again. Large tilt offset due to this work at the station.
+
+Note: Box hinges are beginning to fall apart.
+SMC	2009-01-02 12:00:00	Field	Loren Antolik		
+Changed the batteries at the station due to impending failure of the current batteries. Batteries at the site checked in at 11.9 and 11.6 volts, and the battery that had an eye had a red eye. After disconnecting the batteries checked the solar panel voltage, and it checked out at just over 19 volts. Installed the new batteries, and reconnected power to the instrument box. After a short delay, the acquisition program was able to successfully poll the station.
+SMC	2008-07-01 12:00:00	Field	Mike Poland		
+I went to SMC this morning and pulled the fuse for the zeno, waited a few seconds, and put it back. It didn't have any effect. Because I didn't take a laptop (idiot!) there wasn't much more I could do. In any case, the problem appears more complex than just the zeno needing a power cycle. I can go back later if needed.
+SMC	2008-07-01 12:00:00	Office	Kevan Kamibayashi		
+Because of Mike's visit I was now able to connect to the zeno. Before he visited the site I couldn't get to the zeno's user menu. So although cycling power on the zeno didn't allow the data to catch up, it did allow me to connect to the zeno remotely. I did have to delete all of the data in order to get it running again. This station is now coming in.
+SMC	2007-12-17 12:00:00	Field	Kevan Kamibayashi		
+Station was showing a low battery alarm, probably a result of the recent rain storms. We replaced the 1 27-105amp battery with two new 27-105amp batteries.
+SMC	2007-12-11 12:00:00	Field	Kevan Kamibayashi		
+We stopped by this site and cleaned out the rain gauge. It was clogged with debris.
+SMC	2007-11-27 12:00:00	Office	Kevan Kamibayashi		
+Station stopped coming in some time last night. I called it from the office and was able to delete all the data on the zeno and reset the time, the time wasn't very far off... only seconds. The station is coming in now.
+SMC	2007-09-06 12:00:00	Field	Maurice Sako, Loren Antolik, Kevan Kamibayashi		
+replaced the tiltmeter because there was question of the accuracy of the data.
+
+old readings : X=+0.206, Y=-1.229
+new readings : x=-0.013, y=+0.005, X=-0.047, Y=+0.077
+
+kevan removed the pot that was connected between the tiltmeter gain switch and the zeno i/o channel 13 that was not allowing the tiltmeter to switch between high and low gain.
+
+Tiltmeter depth is 8' 7".
+SMC	2006-06-07 12:00:00	Office	Kevan Kamibayashi		
+While fixing MLS 4001 was off. SMC got a few extra data points and stopped polling. I deleted the data on SMC(just a few data points), the station is up and running.
+SMC	2006-04-13 12:00:00	Office	Kevan Kamibayashi		
+Downloaded all the data on the zeno. Then cleared the zeno's files. The station is up and running... but continues to have a week connection.
+SMC	2006-04-04 12:00:00	Office	Kevan Kamibayashi, Maurice Sako		
+Battery at the station was 2.2 volts. We replaced that battery with a new 27.
+SMC	2005-03-10 12:00:00	Office	Kevan Kamibayashi		
+Visited station it appeared to be working fine. Replaced freewave fuse. Back at office I connected to station and the zeno was doing some sort of looping action. So I reloaded the config file. Station is up and running.
+SMC	2005-01-11 12:00:00	Office	Maurice Sako		
+Replaced dead 85a battery with new 105a battery. Powered down ~0929h and powered back up at 0935h. Voltage on old battery read 3.514v. X component=+0.806 and Y component=-0.165v.
+SMC	2004-02-24 12:00:00	Office	Fran & Claire		
+Site visit at 1345, show Claire tilt station. Everything looks good, 1-Daleco battery has green eye.
+SMC	2003-10-25 12:00:00	Office	Kevan, Maurice, Tom		
+Replaced Pinacle with the AP Geo analog tilt meter #5215. The Zeno s/n: 2422. The Freewave #: 900-1644. Station was left at High Gain/ Filter On. Calibration is both for filter on/ High gain: Y: -0.005 X: 0.069 and Low gain: Y: -0.004 X:0.071. Station battery voltage is at 13.85. Station is up and running.
+SMC	2003-08-29 12:00:00	Office	Fran Coloma		
+Per Peter, removed zeno #2699 and replaced with zeno #1743. Gain at high, filter on, reading = X:+0.156 and Y:-0.153.
+SMC	2003-08-27 12:00:00	Office	Fran Coloma		
+15:39. Replaced 5A fuse at site. Station coming in.
+SMC	2003-08-27 12:00:00	Office	Fran Coloma		
+Installed new zeno #2699 (model S1034, version 2.14) at site. Per Peter, left out 1000 Ohms resistor off of zeno. Voltages at high gain X:+0.172 and Y:-0.152 and at low gain X:+0.168 and Y:-0.156. Power reads 14.21v. Set at high gain.
+SMC	2003-08-20 12:00:00	Office	Fran Coloma		
+Per Peter, removed zeno from site to be placed at BLB on Mauna Loa. Station down.
+SMC	2003-05-26 12:00:00	Office	Peter		
+Lower volatge problems. Replaced battery. Site needs another battery (all tilt stations should have two batteries)
+SMC	2003-05-12 12:00:00	Office	Peter		
+1700HST. cycled power. electronics box is home to ant colony and many spiders.
+SMC	2003-01-08 12:00:00	Office	Kevan Kamibayashi		
+Installed the new pinacle tilt meter S/N: 6274. The exact bottom of the hole is at 8'7'' and the bottom of the tilt meter sits at 8'4''. The orientation of the tilt meter is due north. The sand in the hole was filled to 3'7'' from the top of the casing. The calibration of the tilt meter read X-0.02 and the Y-0.02 and these are in µrad/mv. Problems still exist for the station in terms of the data loger(zeno).
+SMC	2003-01-03 12:00:00	Office	Kevan Kamibayashi		
+Raised the Radio antenna one more meter. The hight of the antenna in feet is 14. The antenna cable was also replaced, do to length, with a low resistance cable.
+SMC	2002-10-31 12:00:00	Office	Fran Coloma		
+Downloaded data from 25oct2002 0545 to 01nov2002 0043. Box cover leaks after NPS removed tar covering, covered with tarp until new exterior made.
+SMC	2002-10-26 12:00:00	Office	Kevan Kamibayashi		
+Transmision antenna was raised from 6.5 feet to 10 feet. The antenna was also changed from a 5 bar yagi to a 7 bar yagi. The antenna is directed N65W.
+SMC	2002-10-19 12:00:00	Office	Maurice Sako, Kevan Kamibayashi		
+Summer Camp tiltmeter installation bottom hole depth is 8' 7, top of the tiltmeter is 5' 3 from the top of the pipe and sand is filled to ~1'8 from the top of the pipe (about ground level). Tranmission antenna is a 5 bar MaxRad pointed in a N65W direction. A 53w panel powers one 27 Delco Voyager 12v battery (105a). SunSaver 10 charge controller is hooked up between solar panel and battery. FreeWave #904-2630, Zeno Model S1034 Sn2422 Pinnacle (PT) tiltmeter SN5961. Rainwise raingage.
+SMC	2002-09-12 12:00:00	Office	Kevan Kamibayashi		
+Went out to rezero the tilt meter. Was unable to establish communication with the tiltmeter. Noticed that the tiltmeter was isolated from the rest of the electronics in the box. I left it as it was. The laptop was saying unable to communicate with tool.
+SMC	2002-04-11 12:00:00	Office	Maurice, Fran		
+Augered hole down to 9 feet 8 inches. Removed old Applied Geomechanics tiltmeter from original hole.
